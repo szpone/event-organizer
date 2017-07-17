@@ -1,0 +1,24 @@
+%h1
+  Events
+%table
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        Start date
+      %th
+        Duration
+      %th
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td
+          = event.name
+        %td
+          = event.start_date
+        %td
+          = event.duration_in_days
+        %td
+          %a{:href => event_path(event)}
+            Show
